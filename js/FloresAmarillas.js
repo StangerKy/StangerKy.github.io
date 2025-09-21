@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
         
         // Creamos y agregamos la nueva imagen del ramo en forma de corazón
         const specialImage = document.createElement('img');
-        specialImage.src = '../imagenes/RamoFlorAmarilla.png';
+        specialImage.src = '../Imagenes/RamoFlorAmarilla.png';
         specialImage.alt = 'Ramo de Flores Amarillas en forma de Corazón';
         specialImage.classList.add('special-flower-arrangement');
         flowerGallery.appendChild(specialImage);
@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (flowersToShow > 0) {
             for (let i = 0; i < flowersToShow; i++) {
                 const img = document.createElement('img');
-                img.src = '../imagenes/FlorAmarilla.png';
+                img.src = '../Imagenes/FlorAmarilla.png';
                 img.alt = 'Flor Amarilla';
                 img.classList.add('flower');
                 flowerGallery.appendChild(img);
@@ -50,4 +50,5 @@ document.addEventListener('DOMContentLoaded', () => {
             flowerGallery.appendChild(message);
         }
     }
+
 });
