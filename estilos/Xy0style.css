@@ -1,0 +1,241 @@
+/* Variables CSS para una fácil personalización */
+:root {
+    --bg-color: #0b0c10;
+    --text-color: #fff;
+    --card-bg-color: rgba(255, 255, 255, 0.8);
+    --card-text-color: #000;
+    --secondary-text-color: #555;
+    --accent-color: #fff;
+    --highlight-color: #f0f0f0;
+}
+
+body {
+    font-family: 'Poppins', Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    background-color: var(--bg-color); /* Fondo oscuro */
+    min-height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+    color: #333; /* Color de texto predeterminado, se ajustará en otros elementos */
+}
+
+/* El resto de tu código CSS sigue igual */
+/* ... */
+
+h1 {
+    margin-bottom: 20px;
+    font-size: 2.5em;
+    font-weight: 700;
+    color: var(--text-color); /* H1 ahora usa el color blanco de la variable */
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5); /* Agrega sombra para que resalte */
+}
+
+h2 {
+    color: var(--text-color) !important; /* También le damos un color claro al h2 para que se vea en el fondo oscuro */
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.game-container {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    gap: 10px;
+    background-color: rgba(255, 255, 255, 0.8); /* Le damos un fondo claro semi-transparente */
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    position: relative;
+    z-index: 10;
+}
+
+.cell {
+    width: 100px;
+    height: 100px;
+    background-color: #ecf0f1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3em;
+    font-weight: bold;
+    cursor: pointer;
+    user-select: none;
+    border-radius: 8px;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.cell:hover {
+    background-color: #dfe6e9;
+    transform: scale(1.05);
+}
+
+.cell.X {
+    color: #9b59b6;
+    animation: pop-in 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+.cell.O {
+    color: #e74c3c;
+    cursor: default;
+}
+
+/* Animación para las celdas */
+@keyframes pop-in {
+    0% { transform: scale(0); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+.message-container {
+    margin-top: 20px;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.8); /* Fondo claro semi-transparente */
+    padding: 10px 20px;
+    border-radius: 8px;
+    z-index: 10;
+}
+
+#status-message {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: var(--card-text-color); /* Color de texto oscuro para que se lea en el fondo claro */
+}
+
+/* Estilo para los botones */
+#reset-button, .return-link, .info-link {
+    padding: 12px 25px;
+    font-size: 1em;
+    margin-top: 15px;
+    cursor: pointer;
+    border: none;
+    border-radius: 50px;
+    background-color: var(--highlight-color); /* Un color de fondo claro */
+    color: var(--card-text-color); /* Color de texto oscuro */
+    font-weight: bold;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, transform 0.2s;
+    text-decoration: none;
+    display: inline-block;
+}
+
+#reset-button:hover, .return-link:hover, .info-link:hover {
+    background-color: var(--card-bg-color);
+    transform: translateY(-2px);
+}
+
+.score-container {
+    margin-top: 25px;
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: bold;
+    background-color: rgba(255, 255, 255, 0.8); /* Fondo claro semi-transparente */
+    padding: 10px 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+}
+
+.info-page {
+    text-align: center;
+    background-color: #ecf0f1;
+    padding: 30px 40px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+.info-page h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+/* Estilos de la línea de victoria */
+.winning-line {
+    position: absolute;
+    background-color: #f1c40f;
+    z-index: 10;
+    transition: transform 0.4s ease-out;
+    opacity: 0;
+}
+
+/* Estilos de la galería de flores */
+.flower-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+    max-width: 600px;
+}
+
+.flower {
+    width: 60px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out;
+}
+
+.flower:hover {
+    transform: scale(1.1);
+}
+
+/* NUEVO ESTILO: para la imagen especial del ramo en forma de corazón */
+.special-flower-arrangement {
+    max-width: 70%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    margin-top: 20px;
+}
+
+/* Nuevo estilo para el mensaje "Te amo Naho" */
+.love-message {
+    color: #e74c3c; /* Color rojo vibrante */
+    font-size: 1.8em;
+    font-weight: 700;
+    margin-bottom: 20px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* ESTILO DEL NUEVO BOTÓN DE PÁGINA PRINCIPAL */
+#home-button {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1000;
+}
+
+/* Efecto de estrellas */
+.shooting-star {
+    position: absolute;
+    background: linear-gradient(-45deg, rgba(255, 255, 255, 1), rgba(0, 0, 0, 0));
+    border-radius: 50%;
+    width: 4px;
+    height: 4px;
+    animation: shooting-star-animation 15s infinite;
+}
+
+@keyframes shooting-star-animation {
+    0% {
+        transform: translate(0, 0) rotate(-45deg);
+        opacity: 0;
+    }
+    5% {
+        opacity: 1;
+    }
+    10% {
+        transform: translate(100vw, 100vh) rotate(-45deg);
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+    }
+}

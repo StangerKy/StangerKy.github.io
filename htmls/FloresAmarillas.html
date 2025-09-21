@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tu Ramo de Flores</title>
+    <link rel="stylesheet" href="../estilos/Xy0style.css">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f0f8ff; 
+            margin: 0;
+            font-family: 'Poppins', Arial, sans-serif;
+            color: #333;
+        }
+        .flower-container {
+            text-align: center;
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+        .flower-container h1 {
+            color: #ffcc00;
+            margin-bottom: 20px;
+            font-size: 2.2em;
+        }
+        .flower-container p {
+            margin-top: 20px;
+            font-size: 1.1em;
+            color: #555;
+        }
+        #points-progress {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #555;
+            margin-top: 15px; /* Ajuste para el nuevo lugar */
+        }
+    </style>
+</head>
+<body>
+    <div class="flower-container">
+        <h1>Tu Ramo de Flores</h1>
+        <div class="flower-gallery">
+            </div>
+        <p>Gana puntos en el juego para hacer crecer tu ramo. 😊</p>
+        <p id="points-progress"></p>
+    </div>
+    
+    <a href="Xy0.html" class="return-link" style="margin-top: 25px;">Volver al Juego</a>
+
+    <script src="../js/FloresAmarillas.js"></script>
+</body>
+</html>
